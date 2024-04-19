@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名</title>
+    <style>
+        * {
+            color: whitesmoke;
+        }
+        body{
+            background: url('./4K动漫/1\ \(2).jpg') no-repeat top left;
+            background-size: cover;
+        }
+
+        .content {
+            width: 700px;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /* opacity: 0; */
+            transition: all linear 0.2s;
+        }
+        /* .content:hover {
+            opacity: 0.7;
+        } */
+        .head {
+            text-align: center;
+            color: white;
+        }
+
+        .middle {
+            width: 800px;
+            height: 305px;
+            /* background: url('') no-repeat center center/cover; */
+            background-color: rgba(255, 255, 255, 0.5s);
+            text-align: center;
+            box-shadow: 0px 0px 70px white;
+            line-height: 300px;
+            /* opacity: 0; */
+            /* transition: all linear 0.2s; */
+        }
+        /* .content:hover .middle{
+            opacity: 0.7;
+        } */
+        .middle span {
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+        }
+        .btn {
+            background-color: pink;
+            color: white;
+            width: 100px;
+            height: 40px;
+            /* opacity: 0; */
+            margin: 50px 80px;
+            cursor: pointer;
+            /* transition: all linear 0.5s; */
+            
+        }
+        /* .btn:hover {
+            opacity: 1;
+        } */
+        .reset{
+            position: relative;
+            top: -600px;
+            left: 1000px;
+        }
+        .reload{
+            position: relative;
+            top: -600px;
+            left: 1100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="head">
+            <h1>随机点名</h1>
+        </div>
+        <div class="middle">
+            <span>随机点名中：<em>熊某某</em></span>
+        </div>
+        <div class="footer">
+            <button class="btn btn1">开始</button>
+            <button  class="btn btn2">结束</button>
+        </div>
+    </div>
+    <button  class="btn reload">点击刷新</button>
+    <button class="btn reset">点击重置</button>
+    <script>
+        // 创建一个数组
+        const arr = ['朱云峰', '钟宇', '支振柠', '张恒瑞', '袁宇宏', '袁石峰', '杨紫云', '徐茹梦', '熊金海','熊定安','谢建华','肖昌旭','吴波','邬友生','王志杰','王佳骏','王东东','王德文','汤树','宋仁平','饶策伟','庞亦飞','罗伟','刘强','刘奇渊','刘斌','李海东','李成','琚神海','姜国健','胡贵平','洪国庆','耿颖','高佳辉','扶星','封宇帆','段家明','董霄龙','邓天凤','戴廷龙','陈上洋','陈俊淇','岑枚颖'
+        ]
+        //获取文字标签
+        const names = document.querySelector('.middle span em')
+        // localStorage.setItem('arr', JSON.stringify(arr))
+        // 获取开始按钮
+        const btn1 = document.querySelector('.btn1')
+        const btn2 = document.querySelector('.btn2')
+        const reset = document.querySelector('.reset')
+        const reload = document.querySelector('.reload')
+
+        //全局变量
+        let times =0 
+        let randoms = 0
+        const middle = document.querySelector('.middle')
+        //设置一个判断flat
+        let flat = true
+        //获取本地信息
+        const arrs = JSON.parse(localStorage.getItem('arrs'))
+        // 给开始按钮添加一个监视器
+        btn1.addEventListener('click', function () {
+            if (flat){
+                // 创建一个计时器
+                times = setInterval(function () {
+                    // 创建一个随机数
+                randoms = parseInt(Math.random() * arrs.length)
+                    // 获取本地文件数组，并将数组里面的内容到文字标签内
+                names.innerHTML = arrs[randoms]
+                
+                flat = false
+                }, 50)
+                // 当数组只有一个时，就不再启用标签
+                if (arrs.length == 1) {
+                    btn1.disabled = true
+                    btn2.disabled = true
+                }
+            }
+        })
+        reset.addEventListener('click',function(){
+        //重置加载数据
+        localStorage.setItem('arr', JSON.stringify(arr))
+        localStorage.setItem('arrs', JSON.stringify(arr))
+        
+        })
+        reload.addEventListener("click",function(){
+        const body = document.querySelector('body')
+        const random1 = parseInt(Math.random() *78)
+        body.style.backgroundImage= `url('./4K动漫/1\ \(${random1}\).jpg')`
+        })
+        // 给结束标签添加一个监视器
+        btn2.addEventListener('click', function () {
+            // 结束时结束计时功能
+            clearInterval(times)
+            // 删除随机的获取到的元组元素
+            arrs.splice(randoms,1)
+            localStorage.setItem('arrs', JSON.stringify(arrs))
+            // localStorage.removeItem(arrs[randoms])
+            console.log(arrs)
+            flat = true
+        })
+    </script>
+</body>
+
+</html>

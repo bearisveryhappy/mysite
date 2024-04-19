@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>京东的登入界面</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        .container{
+            width: 100%;
+            background-color: aliceblue;
+            margin: 0px auto;
+        }
+        .head{
+            height: 75px;
+            width: 990px;
+            border: 0px ;
+        }
+        .head img{
+            margin-top: 10px;
+            margin-left: 300px;
+            float: left;
+        }
+        .head p{
+            font-family: "微软雅黑";
+            display:block;
+            font-size: 25px;
+            margin: 30px ;
+            float: left;
+        }
+        .menu{
+            font-size: 12px;
+            height: 40px;
+            background-color: rgb(255, 248, 240);
+            position: relative;
+        }
+        .word{
+            height: 20px;
+            width: 990px;
+            color: #999;
+            margin-top: 10px;
+            margin-left: 300px;
+            position:absolute;
+            top: 2px;
+            clear: both;
+        }
+        .word>b{
+            font-family: "宋体";
+            font-weight: 10px;
+            font-size: 12px;
+            overflow: hidden;
+            vertical-align: top;
+        }
+        .body{
+            width: 100%;
+            height: 475px;
+            background-color: rgb(233, 56, 84);
+            
+        }
+        .form{
+            width: 990px;
+            height: 475px;
+
+            margin-left: 300px;
+            background: no-repeat url("./images/banner2.png");
+        }
+        .item1{
+            width: 366px;
+            height: 400px;
+            margin: 10px;
+            float: right;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: white;
+        }
+        fieldset{
+            border: 0px;
+            border-top: 2px solid red;
+        }
+        .item2{
+            height: 10px;
+            width: 346px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgb(255, 248, 240);
+        }
+        .item2 p{
+            font-size: 12px;
+            color: orange;
+        }
+        .item3{
+            width: 346px;
+            height: 308px;
+            margin: 10px;
+        }
+        input{
+            /* box-sizing: border-box; */
+            margin: 30px 30px 10px 30px;
+            height: 30px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+        legend{
+            font-size: 30px;
+        }
+        button{
+            height: 36px;
+            width: 268px;
+            box-shadow: 1px 5px 5px gray;
+            color: white;
+            margin: 20px 0;
+            border: 0px;
+            cursor: pointer;
+            border-radius: 10px;
+            opacity: 0.6;
+            background-color: red;
+    
+        }
+        .lab{
+            width: 100%;
+            height: 18px;
+            position: relative;
+        }
+        .lab a{
+            text-decoration: none;
+            position:absolute;
+            left: 240px;
+            right: 20px;
+            color: #666666;
+        }
+        .lab a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        /* .encoll{
+            width: 306px;
+            height: 50px;
+        } */
+
+        #li:first-child{
+            margin-left: 40px;
+        }
+        #li{
+            float: left;
+            vertical-align: bottom;
+            margin-top: 30px;
+            margin-right: 30px;
+            list-style: none;
+            position: relative;
+
+        }
+        #way{
+            text-decoration: none;
+            font-size: 11px;
+            color: #999;
+        }
+        .qq-icon{
+            width: 19px;
+            height: 18px;
+            display: block;
+            background: url("./images/精灵图.png ") no-repeat;
+            margin: 0 auto;
+            position: absolute;
+            float: left;
+            left: -21px;
+            top: 4px;
+        }
+        .weixin-icon{
+            width: 19px;
+            height: 18px;
+            display: block;
+            background: url("./images/精灵图.png ")  no-repeat;
+            background-position: -19px;
+            margin: 0 auto;
+            position: absolute;
+            float: left;
+            left: -21px;
+            top: 4px;
+        }
+        #way:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        .register{
+            width: 78.6px;
+            height: 50px;
+            margin:10px;
+            float: right;
+            line-height: 60px;
+        }
+        .register a{
+            text-decoration: none;
+            font-size: 14px;
+            color: #999;
+        }
+        .register a:hover{
+            color: #999;
+            text-decoration: underline;
+        }
+        .foot{
+            margin-top: 20px;
+            font-size: 12px;
+            width: 990px;
+            height: 86px;
+            margin-left: 300px;
+        }
+        .foot>a{
+            text-decoration: none;
+            margin: 0 10px;
+            color: #666666;
+        }
+        .copyright{
+            margin-top: 30px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <thead>
+            <div class="head">
+                <img src="./images/京东logo.png" alt="京东图标" width="170px" height="60px">
+                <p>欢迎登入</p>
+            </div>
+            
+        </thead>
+        <div class="menu">
+            <div class="word">
+                <b>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。</b>
+            </div>
+        </div>
+        <tbody>
+            <div class="body">
+                <div class="form">
+                    <div class="item1">
+                    <div class="item2">
+                        <p>京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
+                    </div>
+                    <div class="item3">
+                        <form action="./index.html" method="get">
+                            <fieldset style="box-shadow: 1px 10px 5px gray;">
+                                <legend>账户登录</legend>
+                                <label>用户名:<input type="text" name="account" id="" placeholder="邮箱账号/账号/登入手机" maxlength="11"></label><br>
+                                <label >密码:&nbsp;&nbsp;&nbsp;<input type="text" name="passward" placeholder="密码" maxlength="6"></label><br>
+                                <div class="lab"><a href="./连密码都忘.html" target="_blank" >忘记密码</a></div>
+                                <button >登录</button>
+                            </fieldset>
+                            <div class="enroll">
+                                <ul >
+                                    <li id="li"><a id="way" href="#"><b class="qq-icon"></b>QQ</a></li>
+                                    <li id="li"><a id="way" href="#"><b class="weixin-icon"></b>微信</a></li>
+                                    <div class="register"><a href="#">立即注册</a></div>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </tbody>
+        <tfoot>
+            <div class="foot">
+                <a href="./index.html" >关于我们</a>|
+                <a href="mailto:1565328657@qq.com" target="_blank">联系我们</a>|
+                <a href="#">人才招娉</a>
+                <a href="#">商家入驻</a>
+                <a href="#">手机京东</a>
+                <a href="#">友情链接</a>
+                <a href="#">销售联盟</a>
+                <a href="#">京东社区</a>
+                <a href="./404.html" target="_blank">不要点开</a>
+                <div class="copyright">Copyright © 2004-2023  京东JD.com 版权所有</div>
+            </div>
+        </tfoot>
+    </div>
+</body>
+</html>

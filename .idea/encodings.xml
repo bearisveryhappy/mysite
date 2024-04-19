@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/抓取图片/创建数据库+输入数据.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/抓取图片/笔盒图片爬取.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/爬取小说/小说爬取--全篇.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/爬虫/text.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/爬虫/英雄技能描述.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/爬虫2/fanyi.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/猪八戒求职信息.txt" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

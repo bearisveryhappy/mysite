@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业五</title>
+    <style>
+        .box{
+            height: 439px;
+            width: 400px;
+            border: 1px solid black;
+            margin: auto;
+            position: relative;
+            box-sizing: content-box;
+        }
+        ul{
+            position: absolute;
+            top: -16px;
+            left: -40px;
+            
+        }
+        ul>li{
+            overflow: hidden;
+            float: left;
+            list-style: none;
+            /* position: absolute; */
+            
+        }
+        ul>li>a{
+            text-decoration: none;
+            height: 50px;
+            width: 80px;
+            /* border: 1px solid black; */
+            display: inline-block;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            background-color: skyblue;
+        }
+        li>a:hover{
+            background-color: pink;
+        }
+        
+        li>a.active{
+            border-color: palevioletred;
+            color: palevioletred;
+        }
+        .down{
+            margin-top: 51px;
+        }
+        img{
+            width: 400px;
+            height: 388px;
+        }
+        .item{
+            text-align: center;
+            line-height: 300px;
+            display: none;
+        }
+        .item.active{
+            display: block;
+        }
+        /* .text{
+            display: none;
+        } */
+        /* .text.active{
+            display: inline;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <ul>
+                <li><a class="active"  href="javascript:;" data-id ='0'>小猫</a></li>
+                <li><a href="javascript:;" data-id ='1'>小狗</a></li>
+                <li><a href="javascript:;" data-id ='2'>小熊</a></li>
+                <li><a href="javascript:;" data-id ='3'>小兔</a></li>
+                <li><a href="javascript:;" data-id ='4'>小猪</a></li>
+            </ul>
+        </div>
+        <div class="down">
+            <div class="item active"><img src="./images/猫.jpg" alt=""></div>
+            <div class="item"><img src="./images/狗.jpg" alt=""></div>
+            <div class="item"><img src="./images/熊.jpg" alt=""></div>
+            <div class="item"><img src="./images/兔子.jpg" alt=""></div>
+            <div class="item"><img src="./images/小猪.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click',function(e){
+      // console.log(e.target);
+      if (e.target.tagName == 'A') {
+        document.querySelector('.top .active').classList.remove('active')
+        e.target.classList.add('active')
+
+        const n = +e.target.dataset.id   //返回的字符串  添加+号改为数字型
+        // console.log(typeof(n));
+        document.querySelector('.down .active').classList.remove('active')
+        document.querySelector(`.down .item:nth-child(${n+1})`).classList.add('active')
+      }
+    })
+    </script>
+</body>
+</html>

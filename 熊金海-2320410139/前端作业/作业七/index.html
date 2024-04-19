@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>猜拳小游戏</title>
+  <style>
+    #computer-img {
+      width: 200px;
+      height: 200px;
+    }
+    body{
+        padding-left: 645px;
+    }
+  </style>
+</head>
+<body>
+  <h1>猜拳小游戏</h1>
+  <h2>电脑出拳：</h2>
+  <img id="computer-img" src="rock.png">
+
+  <h2>你出拳：</h2>
+  <button onclick="chooseGesture('rock')">石头</button>
+  <button onclick="chooseGesture('paper')">布</button>
+  <button onclick="chooseGesture('scissors')">剪刀</button>
+
+  <h2>对局结果：</h2>
+  <div id="result"></div>
+
+  <h2>积分：</h2>
+  <div id="score">
+    <p>电脑: <span id="computer-score">0</span></p>
+    <p>玩家: <span id="player-score">0</span></p>
+  </div>
+
+  <h2>对局记录：</h2>
+  <ul id="game-history"></ul>
+
+  <script src="game.js"></script>
+</body>
+</html>
